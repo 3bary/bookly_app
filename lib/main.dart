@@ -23,7 +23,4 @@ class BooklyApp extends StatelessWidget {
   }
 }
 
-void getCal(){
-
-}
 
