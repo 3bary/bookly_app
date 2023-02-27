@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'featured_list_view_item.dart';
 
 class FeaturedBooksListView extends StatelessWidget {
