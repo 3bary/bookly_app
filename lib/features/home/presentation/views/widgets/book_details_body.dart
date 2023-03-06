@@ -15,8 +15,17 @@ class BookDetailsBody extends StatelessWidget {
         children:  [
           const CustomBookDetailsAppBar(),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal : width * 0.17),
+            padding: EdgeInsets.symmetric(horizontal : width * 0.2,vertical: 40),
             child: const CustomBookItem(),
+          ),
+          const Text('Jungle Book', style: TextStyle(fontSize:30,fontWeight:FontWeight.bold,)),
+          const SizedBox(height:5),
+          const Opacity(
+            opacity: 0.8,
+            child: Text(
+              'J.K. Rowling',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w100),
+            ),
           ),
         ],
       ),
