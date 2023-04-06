@@ -1,4 +1,5 @@
 import 'package:bookly_app/core/utils/app_router.dart';
+import 'package:bookly_app/core/utils/assets.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_book_item.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +19,7 @@ class BookListViewItem extends StatelessWidget {
         children: [
           const SizedBox(
             height: 125,
-            child: CustomBookItem()
+            child: CustomBookItem(image: AssetsData.testImage,)
           ),
           const SizedBox(width: 30),
           Expanded(

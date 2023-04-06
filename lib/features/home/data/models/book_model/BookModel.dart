@@ -9,7 +9,7 @@ class BookModel {
       this.id, 
       this.etag, 
       this.selfLink, 
-      this.volumeInfo, 
+      this.volumeInfo,
       this.saleInfo, 
       this.accessInfo, 
       this.searchInfo,});

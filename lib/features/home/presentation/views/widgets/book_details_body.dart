@@ -1,3 +1,4 @@
+import 'package:bookly_app/core/utils/assets.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_book_item.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/similar_books_list_view.dart';
@@ -24,7 +25,7 @@ class BookDetailsBody extends StatelessWidget {
               const CustomBookDetailsAppBar(),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal : width * 0.2,vertical: 40),
-                child: const CustomBookItem(),
+                child: const CustomBookItem(image: AssetsData.testImage,),
               ),
               const Text('Jungle Book', style: TextStyle(fontSize:30,fontWeight:FontWeight.bold,)),
               const SizedBox(height:5),
