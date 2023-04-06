@@ -1,13 +1,13 @@
 import 'package:bookly_app/core/utils/app_router.dart';
-import 'package:bookly_app/core/utils/assets.dart';
+import 'package:bookly_app/features/home/data/models/book_model/BookModel.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_book_item.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class BookListViewItem extends StatelessWidget {
-  const BookListViewItem({Key? key}) : super(key: key);
-
+  const BookListViewItem({Key? key, required this.bookModel}) : super(key: key);
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -17,9 +17,9 @@ class BookListViewItem extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const SizedBox(
+          SizedBox(
             height: 125,
-            child: CustomBookItem(image: AssetsData.testImage,)
+            child: CustomBookItem(image: bookModel.volumeInfo!.imageLinks?.smallThumbnail?? '',)
           ),
           const SizedBox(width: 30),
           Expanded(
@@ -28,23 +28,23 @@ class BookListViewItem extends StatelessWidget {
               children: [
                 SizedBox(
                   width: MediaQuery.of(context).size.width * 0.5,
-                  child: const Text(
-                    'Harry Potter Second Edition for everyone',
+                  child: Text(
+                    bookModel.volumeInfo!.title!,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                    style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
                   ),
                 ),
                 const SizedBox(height: 3),
-                const Text(
-                  'J.K. Rowling',
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.w100),
+                Text(
+                  bookModel.volumeInfo!.authors![0],
+                  style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w100),
                 ),
                 const SizedBox(height: 5),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: const [
-                    Text('19.99 \$',
+                    Text('Free',
                         style:
                             TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
                     BookRating()
