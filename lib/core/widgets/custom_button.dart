@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({Key? key, required this.backgroundColor, this.borderRadius, required this.text, required this.textColor}) : super(key: key);
+  const CustomButton({Key? key, required this.backgroundColor, this.borderRadius, required this.text, required this.textColor, this.onPressed}) : super(key: key);
   final Color backgroundColor;
   final BorderRadius? borderRadius;
   final String text;
   final Color textColor;
+  final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -17,7 +18,7 @@ class CustomButton extends StatelessWidget {
             borderRadius: borderRadius ??  BorderRadius.circular(16)
           ),
         ),
-        onPressed: () {},
+        onPressed: onPressed,
         child: Text(
           text,
           style: TextStyle(
