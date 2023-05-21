@@ -13,6 +13,6 @@ Flutter App for Display programming books using google books API.
 
 ## Screenshots
 
-![Screenshot](1.jpg)
-![Screenshot](2.pg)
-![Screenshot](3.jpg)
+![Screenshot](1.jpeg)
+![Screenshot](2.jpeg)
+![Screenshot](3.jpeg)
